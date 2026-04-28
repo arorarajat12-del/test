@@ -1,492 +1,320 @@
 <!DOCTYPE html>
-<html lang="en-CA">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Passport Funding 101 | Whimble</title>
-  <meta name="description" content="Free plain-language guide to Ontario's Passport Program: eligibility, claims, deadlines, and practical next steps." />
+  <title>Free Passport Funding Guide for Ontario Families | Whimble</title>
+  <meta name="description" content="Get a free, plain-language guide to Ontario's Passport Program. Learn eligibility, covered expenses, and claim steps in minutes." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #f7faf8;
-      --surface: #fff;
-      --surface-soft: #f1f8f4;
+      --surface: #ffffff;
+      --surface-alt: #f2f7f4;
       --text: #112238;
       --muted: #546275;
-      --green: #1a7b4f;
-      --green-deep: #115337;
+      --border: #dbe5de;
+      --green: #18794e;
+      --green-deep: #105336;
       --green-soft: #d9f0e3;
-      --yellow-soft: #fff3c4;
-      --line: #dbe5de;
-      --shadow: 0 12px 30px -16px rgba(17, 34, 56, 0.45);
+      --accent: #ffd95e;
+      --shadow: 0 8px 26px -14px rgba(17, 34, 56, 0.35);
       --radius: 14px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
     body {
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       color: var(--text);
+      background: linear-gradient(180deg, #f2f8f4 0%, #fff 25%);
       line-height: 1.55;
-      background:
-        radial-gradient(circle at 4% 10%, rgba(128, 226, 101, 0.14), transparent 28%),
-        radial-gradient(circle at 90% 8%, rgba(20, 132, 208, 0.11), transparent 24%),
-        linear-gradient(180deg, #f4faf6 0%, #fff 35%);
     }
     a { color: inherit; }
+    img { max-width: 100%; display: block; }
 
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 8px;
-      background: #0f1a2e;
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 10px;
-      z-index: 999;
-    }
-    .skip-link:focus { left: 8px; }
+    .container { width: min(1120px, 100% - 2rem); margin-inline: auto; }
 
-    .container { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
-
-    .topbar {
+    .nav-wrap {
       position: sticky;
       top: 0;
       z-index: 20;
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.9);
+      border-bottom: 1px solid var(--border);
     }
-    .topbar-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .brand {
-      color: var(--green);
-      font-size: 1.45rem;
-      font-weight: 800;
-      text-decoration: none;
-      letter-spacing: -0.04em;
-    }
-    .top-actions { display: flex; align-items: center; gap: 10px; }
-    .microtrust { color: var(--muted); font-size: 0.9rem; display: none; }
-
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; }
+    .logo { color: var(--green); font-size: 1.5rem; font-weight: 800; text-decoration: none; letter-spacing: -0.03em; }
+    .nav-actions { display: flex; gap: .75rem; align-items: center; }
     .btn {
-      border: 1px solid transparent;
-      border-radius: 999px;
       text-decoration: none;
+      border-radius: 10px;
+      border: 1px solid transparent;
       font-weight: 700;
-      font-size: 0.95rem;
-      min-height: 44px;
-      padding: 0.6rem 1rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+      font-size: .95rem;
+      padding: .7rem 1rem;
+      display: inline-block;
     }
     .btn-primary { background: var(--green); color: #fff; }
     .btn-primary:hover { background: var(--green-deep); }
-    .btn-ghost { border-color: var(--line); background: #fff; }
+    .btn-ghost { border-color: var(--border); color: var(--text); background: #fff; }
 
-    .hero { padding: 3rem 0 2.2rem; }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 2rem;
-      align-items: start;
-    }
+    .hero { padding: 3.5rem 0 2.75rem; }
+    .hero-grid { display: grid; gap: 2rem; grid-template-columns: 1.05fr .95fr; align-items: start; }
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--green-soft);
-      color: var(--green-deep);
-      border: 1px solid rgba(17, 83, 55, 0.14);
-      border-radius: 999px;
-      font-size: 0.8rem;
-      letter-spacing: 0.04em;
+      display: inline-block;
+      font-size: .78rem;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      font-weight: 700;
-      padding: 6px 10px;
-      margin-bottom: 1rem;
-    }
-    .dot {
-      width: 8px;
-      height: 8px;
-      background: #80e265;
+      color: var(--green-deep);
+      background: var(--green-soft);
       border-radius: 999px;
-      box-shadow: 0 0 0 4px rgba(128, 226, 101, 0.2);
+      padding: .35rem .65rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
     }
     h1 {
-      font-size: clamp(2.1rem, 4.8vw, 3.6rem);
-      line-height: 1.03;
-      letter-spacing: -0.04em;
-      margin-bottom: 0.9rem;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
     }
-    .hero-sub { color: var(--muted); max-width: 58ch; }
-    .hero-actions { margin-top: 1.15rem; display: flex; flex-wrap: wrap; gap: 10px; }
-    .soft-note {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 0.92rem;
-      border: 1px solid var(--line);
-      background: #fff;
-      border-radius: 999px;
-      padding: 0.45rem 0.8rem;
-    }
-
-    .trust-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 1.1rem;
-    }
-    .trust-pill {
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 0.7rem 0.8rem;
-      box-shadow: var(--shadow);
-    }
-    .trust-pill b { display: block; font-size: 0.93rem; margin-bottom: 2px; }
-    .trust-pill span { color: var(--muted); font-size: 0.84rem; }
-
-    .card {
-      background: rgba(255, 255, 255, 0.95);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      box-shadow: 0 20px 40px -20px rgba(17, 34, 56, 0.45);
-      padding: 1.2rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 6px;
-      background: linear-gradient(90deg, #80e265, #1a7b4f, #1484d0);
-    }
-    .card h2 { margin-top: 0.35rem; margin-bottom: 0.35rem; font-size: 1.35rem; letter-spacing: -0.02em; }
-    .card p { color: var(--muted); font-size: 0.95rem; }
-
-    form { display: grid; gap: 0.7rem; margin-top: 0.9rem; }
-    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
-    label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.2rem; }
-    input {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 11px;
-      padding: 0.73rem 0.78rem;
-      font: inherit;
-    }
-    input:focus { outline: 3px solid rgba(26, 123, 79, 0.22); border-color: var(--green); }
-    .hp { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
-    .privacy { color: var(--muted); font-size: 0.82rem; text-align: center; }
-    .success {
-      display: none;
-      margin-top: 0.5rem;
-      border-radius: 10px;
-      border: 1px solid #bde4ca;
-      background: #f3fbf6;
-      color: #0d4d31;
-      padding: 0.72rem 0.82rem;
-      font-size: 0.9rem;
-    }
-    .success.show { display: block; }
-
-    .section { padding: 2.8rem 0; }
-    .section h2 { font-size: clamp(1.55rem, 3vw, 2.35rem); letter-spacing: -0.02em; margin-bottom: 0.35rem; }
-    .section-sub { color: var(--muted); max-width: 62ch; }
-
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 1rem; }
-    .step { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 0.95rem; }
-    .num {
-      width: 1.75rem;
-      height: 1.75rem;
-      border-radius: 10px;
-      background: var(--green);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-size: 0.85rem;
-      font-weight: 800;
-      margin-bottom: 0.4rem;
-    }
-    .step strong { display: block; margin-bottom: 0.22rem; }
-    .step p { color: var(--muted); font-size: 0.92rem; }
-
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
-    .checks { list-style: none; margin-top: 0.7rem; display: grid; gap: 0.52rem; }
-    .checks li { display: flex; gap: 8px; align-items: flex-start; }
+    .hero-sub { color: var(--muted); max-width: 58ch; margin-bottom: 1.1rem; }
+    .bullet-list { list-style: none; display: grid; gap: .7rem; margin: 1rem 0 1.4rem; }
+    .bullet-list li { display: flex; gap: .65rem; align-items: flex-start; font-weight: 500; }
     .tick {
-      width: 1.15rem;
-      height: 1.15rem;
-      border-radius: 999px;
+      flex: 0 0 1.35rem;
+      width: 1.35rem;
+      height: 1.35rem;
+      border-radius: 50%;
       background: var(--green-soft);
       color: var(--green-deep);
       display: grid;
       place-items: center;
       font-weight: 800;
-      font-size: 0.75rem;
-      margin-top: 2px;
-      flex-shrink: 0;
+      margin-top: .08rem;
+      font-size: .82rem;
     }
 
-    .faq { display: grid; gap: 0.65rem; margin-top: 0.7rem; }
-    details {
-      border: 1px solid var(--line);
+    .note {
+      padding: .8rem .9rem;
+      background: #fff7d8;
+      border: 1px solid #f1d665;
+      border-radius: 10px;
+      font-size: .92rem;
+      color: #483d16;
+      max-width: 58ch;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.35rem;
+    }
+    .card h2 { font-size: 1.35rem; margin-bottom: .3rem; letter-spacing: -0.02em; }
+    .card p { color: var(--muted); font-size: .95rem; }
+    form { margin-top: 1rem; display: grid; gap: .7rem; }
+    .row { display: grid; gap: .65rem; grid-template-columns: 1fr 1fr; }
+    label { font-size: .84rem; font-weight: 600; color: var(--text); display: block; margin-bottom: .26rem; }
+    input {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .76rem .82rem;
+      font: inherit;
       background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
     }
-    summary {
-      list-style: none;
-      cursor: pointer;
-      font-weight: 700;
-      padding: 0.8rem 0.9rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-    }
-    summary::-webkit-details-marker { display: none; }
-    summary::after {
-      content: "+";
-      width: 1.35rem;
-      height: 1.35rem;
-      border-radius: 999px;
-      background: var(--surface-soft);
+    input:focus { outline: 3px solid rgba(24,121,78,.2); border-color: var(--green); }
+    .full { width: 100%; }
+    .privacy { color: var(--muted); font-size: .82rem; text-align: center; }
+
+    .section { padding: 3rem 0; }
+    .section h2 { font-size: clamp(1.5rem, 3vw, 2.3rem); margin-bottom: .7rem; letter-spacing: -0.02em; }
+    .section-sub { color: var(--muted); max-width: 62ch; }
+
+    .steps { display: grid; gap: 1rem; grid-template-columns: repeat(3,1fr); margin-top: 1.2rem; }
+    .step { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; }
+    .step strong { display: block; font-size: 1.05rem; margin: .3rem 0; }
+    .num {
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      background: var(--green-soft);
       color: var(--green-deep);
       display: grid;
       place-items: center;
-      flex-shrink: 0;
+      font-weight: 800;
+      font-size: .88rem;
     }
-    details[open] summary::after { content: "−"; }
-    details p { color: var(--muted); padding: 0 0.9rem 0.85rem; font-size: 0.92rem; }
 
-    footer { border-top: 1px solid var(--line); padding: 1.5rem 0 2rem; background: #fff; }
-    .foot { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; color: var(--muted); font-size: 0.9rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: start; }
+    .checks { list-style: none; display: grid; gap: .58rem; margin-top: .9rem; }
 
-    :focus-visible { outline: 3px solid #ffd95e; outline-offset: 3px; }
-
-    @media (min-width: 900px) {
-      .microtrust { display: inline; }
+    .faq { display: grid; gap: .7rem; margin-top: 1.1rem; }
+    details {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .85rem .95rem;
     }
+    summary { font-weight: 700; cursor: pointer; }
+    details p { color: var(--muted); margin-top: .45rem; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.6rem 0 2rem;
+      font-size: .9rem;
+      color: var(--muted);
+      background: #fff;
+    }
+    .foot { display: flex; justify-content: space-between; gap: .8rem; flex-wrap: wrap; }
+
+    .success {
+      background: #f3fbf6;
+      border: 1px solid #bde4ca;
+      color: #10452e;
+      border-radius: 10px;
+      padding: .85rem .95rem;
+      font-size: .95rem;
+    }
+
     @media (max-width: 930px) {
       .hero-grid, .grid-2 { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr; }
       .row { grid-template-columns: 1fr; }
-      .trust-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="topbar" aria-label="Header">
-    <div class="container topbar-inner">
-      <a class="brand" href="https://whimble.ca">whimble</a>
-      <div class="top-actions">
-        <span class="microtrust">Plain-language Ontario guide</span>
+  <div class="nav-wrap">
+    <nav class="container">
+      <a class="logo" href="https://whimble.ca">whimble</a>
+      <div class="nav-actions">
         <a class="btn btn-ghost" href="tel:18555426082">1-855-542-6082</a>
-        <a class="btn btn-primary" href="#download">Get guide</a>
+        <a class="btn btn-primary" href="#download">Get free guide</a>
       </div>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">For Ontario families</span>
+        <h1>Understand Passport funding in one clear guide.</h1>
+        <p class="hero-sub">This free PDF explains who qualifies, what expenses are covered, and how to submit claims correctly — in plain language you can use right away.</p>
+        <ul class="bullet-list">
+          <li><span class="tick">✓</span><span>Simple explanation of eligibility, DSO intake, and wait times.</span></li>
+          <li><span class="tick">✓</span><span>Clear examples of what you can and cannot claim.</span></li>
+          <li><span class="tick">✓</span><span>Step-by-step claim workflow and March 31 deadline checklist.</span></li>
+        </ul>
+        <p class="note"><strong>Why this matters:</strong> many families lose unused funding each year because rules and timelines are confusing. This guide helps you avoid that.</p>
+      </div>
+
+      <aside class="card" id="download" aria-label="Download form">
+        <h2>Get the free 16-page guide</h2>
+        <p>No payment. No spam sequence. We email the PDF instantly.</p>
+        <form id="leadForm" onsubmit="handleSubmit(event)">
+          <div class="row">
+            <div>
+              <label for="first">First name</label>
+              <input id="first" type="text" name="firstname" autocomplete="given-name" required />
+            </div>
+            <div>
+              <label for="last">Last name</label>
+              <input id="last" type="text" name="lastname" autocomplete="family-name" required />
+            </div>
+          </div>
+          <div>
+            <label for="email">Email address</label>
+            <input id="email" type="email" name="email" autocomplete="email" inputmode="email" required />
+          </div>
+          <button class="btn btn-primary full" type="submit">Send me the guide</button>
+          <p class="privacy">We only use your email to send this guide.</p>
+        </form>
+      </aside>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow"><span class="dot" aria-hidden="true"></span>Free Passport Funding 101 guide</div>
-          <h1>Feel clearer about Passport funding.</h1>
-          <p class="hero-sub">A free guide for adults with developmental disabilities in Ontario and the people who support them. It explains eligibility, claims, and timelines in plain language.</p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#download">Get free guide</a>
-            <span class="soft-note">✓ No pressure. We email the PDF instantly.</span>
-          </div>
-
-          <div class="trust-row" aria-label="Trust highlights">
-            <div class="trust-pill"><b>Clear language</b><span>No jargon. Just practical next steps.</span></div>
-            <div class="trust-pill"><b>Ontario focused</b><span>Built around Passport program rules.</span></div>
-            <div class="trust-pill"><b>Respectful pace</b><span>Read now or later — no hard sell.</span></div>
-          </div>
-        </div>
-
-        <aside class="card" id="download" aria-label="Download form">
-          <h2>Get the free 16-page guide</h2>
-          <p>Enter your details and we’ll send it to your inbox.</p>
-          <form id="leadForm" novalidate>
-            <div class="hp" aria-hidden="true">
-              <label for="company">Company</label>
-              <input id="company" name="company" autocomplete="off" tabindex="-1" />
-            </div>
-
-            <div class="row">
-              <div>
-                <label for="first_name">First name</label>
-                <input id="first_name" name="first_name" type="text" autocomplete="given-name" required />
-              </div>
-              <div>
-                <label for="last_name">Last name</label>
-                <input id="last_name" name="last_name" type="text" autocomplete="family-name" required />
-              </div>
-            </div>
-            <div>
-              <label for="email">Email address</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-            </div>
-            <button class="btn btn-primary" type="submit" style="width:100%;">Send me the guide</button>
-            <p class="privacy">We only use your email to send this guide.</p>
-            <p class="success" id="successMessage" role="status" aria-live="polite"></p>
-          </form>
-        </aside>
+  <section class="section">
+    <div class="container">
+      <h2>How it works</h2>
+      <p class="section-sub">We designed this page to be quick to scan and quick to act on: one offer, one form, one clear next step.</p>
+      <div class="steps">
+        <article class="step"><span class="num">1</span><strong>Request the guide</strong><p>Fill in 3 fields so we can send the PDF to your inbox.</p></article>
+        <article class="step"><span class="num">2</span><strong>Read what applies to you</strong><p>Jump to the sections for eligibility, expenses, or claims.</p></article>
+        <article class="step"><span class="num">3</span><strong>Use funding confidently</strong><p>Follow the examples and checklist to avoid common claim mistakes.</p></article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="container">
-        <h2>How it works</h2>
-        <p class="section-sub">One simple action now, then you can review the guide at your own pace.</p>
-        <div class="steps">
-          <article class="step"><div class="num">1</div><strong>Request the guide</strong><p>Complete the short form with your name and email.</p></article>
-          <article class="step"><div class="num">2</div><strong>Check your inbox</strong><p>The PDF is sent immediately after submission.</p></article>
-          <article class="step"><div class="num">3</div><strong>Use funding confidently</strong><p>Follow examples and checklists to avoid claim mistakes.</p></article>
+  <section class="section" style="background:var(--surface-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border)">
+    <div class="container grid-2">
+      <div>
+        <h2>What’s inside the guide</h2>
+        <p class="section-sub">Focused answers to the real questions families ask most often.</p>
+        <ul class="checks bullet-list">
+          <li><span class="tick">✓</span><span>Passport eligibility requirements and DSO process.</span></li>
+          <li><span class="tick">✓</span><span>Funding range and what affects your yearly amount.</span></li>
+          <li><span class="tick">✓</span><span>Allowed and not-allowed expenses with examples.</span></li>
+          <li><span class="tick">✓</span><span>MyDirectPlan claim steps and documentation checklist.</span></li>
+          <li><span class="tick">✓</span><span>Year-end timeline so funding is not left unused.</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Trust & sources</h2>
+        <p>Guide content is compiled from Ontario's Passport Program guidance and translated into plain language by Whimble's Ontario care team.</p>
+        <div class="faq">
+          <details>
+            <summary>Is this guide really free?</summary>
+            <p>Yes. You do not need a credit card and we do not charge for the PDF.</p>
+          </details>
+          <details>
+            <summary>Can I verify against official sources?</summary>
+            <p>Yes. We include links to Ontario’s official Passport resources in the guide.</p>
+          </details>
+          <details>
+            <summary>Is this only for Ottawa families?</summary>
+            <p>No. Passport is provincial, so the key rules apply across Ontario.</p>
+          </details>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" style="background:var(--surface-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-      <div class="container grid-2">
-        <div>
-          <h2>What’s inside</h2>
-          <p class="section-sub">A calm, practical overview of the pieces families ask about most.</p>
-          <ul class="checks">
-            <li><span class="tick">✓</span><span>Who qualifies and how DSO connects to Passport.</span></li>
-            <li><span class="tick">✓</span><span>How yearly funding amounts are determined.</span></li>
-            <li><span class="tick">✓</span><span>What expenses are covered — with real examples.</span></li>
-            <li><span class="tick">✓</span><span>How to submit claims with less stress.</span></li>
-            <li><span class="tick">✓</span><span>March 31 planning checklist to avoid unused funds.</span></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2>Common questions</h2>
-          <div class="faq">
-            <details>
-              <summary>Is this guide really free?</summary>
-              <p>Yes. No payment and no credit card required.</p>
-            </details>
-            <details>
-              <summary>Is this only relevant in Ottawa?</summary>
-              <p>No. Passport is a provincial Ontario program.</p>
-            </details>
-            <details>
-              <summary>Can I verify against official sources?</summary>
-              <p>Yes. The guide points to Ontario’s official Passport resources.</p>
-            </details>
-            <details>
-              <summary>Do I have to use Whimble services?</summary>
-              <p>No. The guide is useful regardless of provider choice.</p>
-            </details>
-          </div>
-        </div>
+  <section class="section">
+    <div class="container card" style="display:grid;gap:1rem;grid-template-columns:1fr auto;align-items:center;">
+      <div>
+        <h2 style="margin-bottom:.35rem;">Ready to get your copy?</h2>
+        <p class="section-sub">It takes under 20 seconds.</p>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="container" style="background:linear-gradient(145deg,#fff,var(--yellow-soft));border:1px solid var(--line);border-radius:20px;padding:1.2rem 1.1rem;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;">
-        <div>
-          <h2 style="margin-bottom:0.25rem;">Start with clarity.</h2>
-          <p class="section-sub">Get the guide now and take the next step when you are ready.</p>
-        </div>
-        <a class="btn btn-primary" href="#download">Get guide</a>
-      </div>
-    </section>
-  </main>
+      <a class="btn btn-primary" href="#download">Download free guide</a>
+    </div>
+  </section>
 
   <footer>
     <div class="container foot">
-      <span>© <span id="year"></span> Whimble Care Inc.</span>
-      <span><a href="https://whimble.ca/privacy">Privacy</a> · <a href="https://whimble.ca/contact">Contact</a> · <a href="https://www.ontario.ca/page/passport-program-guidelines">Ontario guidelines</a></span>
+      <a class="logo" style="font-size:1.1rem" href="https://whimble.ca">whimble</a>
+      <span>© 2026 Whimble Care Inc. · <a href="https://whimble.ca/privacy">Privacy</a> · <a href="https://whimble.ca/contact">Contact</a></span>
     </div>
   </footer>
 
   <script>
-    (function () {
-      const form = document.getElementById("leadForm");
-      const success = document.getElementById("successMessage");
-      const year = document.getElementById("year");
-      year.textContent = new Date().getFullYear();
-
-      function setError(input, message) {
-        input.setCustomValidity(message);
-        input.setAttribute("aria-invalid", "true");
-      }
-
-      function clearError(input) {
-        input.setCustomValidity("");
-        input.removeAttribute("aria-invalid");
-      }
-
-      form.addEventListener("input", (event) => {
-        if (event.target.matches("input")) clearError(event.target);
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const first = form.firstname.value.trim();
+      const email = form.email.value.trim();
+      form.innerHTML = `<div class="success"><strong>Thanks${first ? `, ${first}` : ""}.</strong> Your guide is on the way to <strong>${email}</strong>. Check spam/promotions if it doesn't appear within a few minutes.</div>`;
+      console.log("[Whimble] Lead captured", {
+        firstname: form.firstname?.value,
+        lastname: form.lastname?.value,
+        email,
+        source: "passport-guide-landing",
+        submittedAt: new Date().toISOString()
       });
-
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        const first = form.querySelector("#first_name");
-        const last = form.querySelector("#last_name");
-        const email = form.querySelector("#email");
-        const hp = form.querySelector("#company");
-        let hasError = false;
-
-        [first, last, email].forEach(clearError);
-
-        if (hp.value.trim()) return;
-
-        if (!first.value.trim()) {
-          setError(first, "Please enter your first name.");
-          hasError = true;
-        }
-        if (!last.value.trim()) {
-          setError(last, "Please enter your last name.");
-          hasError = true;
-        }
-        if (!email.value.trim() || !email.validity.valid) {
-          setError(email, "Please enter a valid email address.");
-          hasError = true;
-        }
-
-        if (hasError) {
-          form.reportValidity();
-          return;
-        }
-
-        const lead = {
-          first_name: first.value.trim(),
-          last_name: last.value.trim(),
-          email: email.value.trim(),
-          source: "passport-guide-landing",
-          submitted_at: new Date().toISOString()
-        };
-
-        console.log("[Whimble] Lead captured", lead);
-        form.querySelector('button[type="submit"]').disabled = true;
-        form.querySelector('button[type="submit"]').textContent = "Guide requested";
-        success.textContent = `Thanks, ${lead.first_name}. The guide is on the way to ${lead.email}.`;
-        success.classList.add("show");
-      });
-    })();
+    }
   </script>
 </body>
 </html>
