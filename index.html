@@ -3,318 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Free Passport Funding Guide for Ontario Families | Whimble</title>
-  <meta name="description" content="Get a free, plain-language guide to Ontario's Passport Program. Learn eligibility, covered expenses, and claim steps in minutes." />
+  <title>Ontario Passport Funding Guide for Families | Whimble</title>
+  <meta name="description" content="Free, plain-language Passport funding guidance for Ontario families: eligibility, expenses, deadlines, and how Whimble can support eligible service plans." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #f7faf8;
-      --surface: #ffffff;
-      --surface-alt: #f2f7f4;
-      --text: #112238;
-      --muted: #546275;
-      --border: #dbe5de;
-      --green: #18794e;
-      --green-deep: #105336;
-      --green-soft: #d9f0e3;
-      --accent: #ffd95e;
-      --shadow: 0 8px 26px -14px rgba(17, 34, 56, 0.35);
-      --radius: 14px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      color: var(--text);
-      background: linear-gradient(180deg, #f2f8f4 0%, #fff 25%);
-      line-height: 1.55;
-    }
-    a { color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    .container { width: min(1120px, 100% - 2rem); margin-inline: auto; }
-
-    .nav-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(255,255,255,.9);
-      border-bottom: 1px solid var(--border);
-    }
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; }
-    .logo { color: var(--green); font-size: 1.5rem; font-weight: 800; text-decoration: none; letter-spacing: -0.03em; }
-    .nav-actions { display: flex; gap: .75rem; align-items: center; }
-    .btn {
-      text-decoration: none;
-      border-radius: 10px;
-      border: 1px solid transparent;
-      font-weight: 700;
-      font-size: .95rem;
-      padding: .7rem 1rem;
-      display: inline-block;
-    }
-    .btn-primary { background: var(--green); color: #fff; }
-    .btn-primary:hover { background: var(--green-deep); }
-    .btn-ghost { border-color: var(--border); color: var(--text); background: #fff; }
-
-    .hero { padding: 3.5rem 0 2.75rem; }
-    .hero-grid { display: grid; gap: 2rem; grid-template-columns: 1.05fr .95fr; align-items: start; }
-    .eyebrow {
-      display: inline-block;
-      font-size: .78rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--green-deep);
-      background: var(--green-soft);
-      border-radius: 999px;
-      padding: .35rem .65rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    h1 {
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 1.06;
-      letter-spacing: -0.03em;
-      margin-bottom: 1rem;
-    }
-    .hero-sub { color: var(--muted); max-width: 58ch; margin-bottom: 1.1rem; }
-    .bullet-list { list-style: none; display: grid; gap: .7rem; margin: 1rem 0 1.4rem; }
-    .bullet-list li { display: flex; gap: .65rem; align-items: flex-start; font-weight: 500; }
-    .tick {
-      flex: 0 0 1.35rem;
-      width: 1.35rem;
-      height: 1.35rem;
-      border-radius: 50%;
-      background: var(--green-soft);
-      color: var(--green-deep);
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      margin-top: .08rem;
-      font-size: .82rem;
-    }
-
-    .note {
-      padding: .8rem .9rem;
-      background: #fff7d8;
-      border: 1px solid #f1d665;
-      border-radius: 10px;
-      font-size: .92rem;
-      color: #483d16;
-      max-width: 58ch;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.35rem;
-    }
-    .card h2 { font-size: 1.35rem; margin-bottom: .3rem; letter-spacing: -0.02em; }
-    .card p { color: var(--muted); font-size: .95rem; }
-    form { margin-top: 1rem; display: grid; gap: .7rem; }
-    .row { display: grid; gap: .65rem; grid-template-columns: 1fr 1fr; }
-    label { font-size: .84rem; font-weight: 600; color: var(--text); display: block; margin-bottom: .26rem; }
-    input {
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: .76rem .82rem;
-      font: inherit;
-      background: #fff;
-    }
-    input:focus { outline: 3px solid rgba(24,121,78,.2); border-color: var(--green); }
-    .full { width: 100%; }
-    .privacy { color: var(--muted); font-size: .82rem; text-align: center; }
-
-    .section { padding: 3rem 0; }
-    .section h2 { font-size: clamp(1.5rem, 3vw, 2.3rem); margin-bottom: .7rem; letter-spacing: -0.02em; }
-    .section-sub { color: var(--muted); max-width: 62ch; }
-
-    .steps { display: grid; gap: 1rem; grid-template-columns: repeat(3,1fr); margin-top: 1.2rem; }
-    .step { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; }
-    .step strong { display: block; font-size: 1.05rem; margin: .3rem 0; }
-    .num {
-      width: 1.8rem;
-      height: 1.8rem;
-      border-radius: 50%;
-      background: var(--green-soft);
-      color: var(--green-deep);
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      font-size: .88rem;
-    }
-
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: start; }
-    .checks { list-style: none; display: grid; gap: .58rem; margin-top: .9rem; }
-
-    .faq { display: grid; gap: .7rem; margin-top: 1.1rem; }
-    details {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: .85rem .95rem;
-    }
-    summary { font-weight: 700; cursor: pointer; }
-    details p { color: var(--muted); margin-top: .45rem; }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.6rem 0 2rem;
-      font-size: .9rem;
-      color: var(--muted);
-      background: #fff;
-    }
-    .foot { display: flex; justify-content: space-between; gap: .8rem; flex-wrap: wrap; }
-
-    .success {
-      background: #f3fbf6;
-      border: 1px solid #bde4ca;
-      color: #10452e;
-      border-radius: 10px;
-      padding: .85rem .95rem;
-      font-size: .95rem;
-    }
-
-    @media (max-width: 930px) {
-      .hero-grid, .grid-2 { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr; }
-      .row { grid-template-columns: 1fr; }
-    }
+    :root { --ink:#132741; --muted:#506179; --bg:#f4f8fb; --surface:#fff; --line:#d7e2ea; --green:#176647; --green-deep:#0d3f2b; --accent:#c95f43; --shadow:0 18px 40px -28px rgba(13,35,57,.45); --radius:12px; }
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+    .container{width:min(1120px,100% - 2rem);margin-inline:auto}
+    a{color:inherit}
+    .nav-wrap{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0}.logo{font-size:1.4rem;font-weight:800;color:var(--green);text-decoration:none}
+    .btn{display:inline-block;text-decoration:none;border-radius:10px;padding:.72rem 1rem;font-weight:700;border:1px solid transparent}
+    .btn-primary{background:var(--green);color:#fff}.btn-primary:hover{background:var(--green-deep)}
+    .hero{padding:3rem 0 2rem;background:linear-gradient(180deg,#eff5f8 0%,#fff 70%)}
+    .hero h1{font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.08;max-width:18ch}.hero p{margin-top:.9rem;max-width:65ch;color:var(--muted)}
+    .chips{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1rem}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.3rem .58rem;font-size:.8rem;font-weight:700}
+    .form-wrap{margin-top:1.2rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem}
+    form{display:grid;grid-template-columns:1fr 1fr auto;gap:.65rem;align-items:end}.field{display:grid;gap:.3rem}
+    label{font-size:.8rem;font-weight:700} input{border:1px solid var(--line);border-radius:10px;padding:.65rem .75rem;font:inherit}
+    .form-note{grid-column:1/-1;font-size:.82rem;color:var(--muted)}
+    .section{padding:2.8rem 0}
+    .auth{background:var(--bg);border-block:1px solid var(--line)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+    .eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+    h2{font-size:clamp(1.7rem,3.2vw,2.8rem);line-height:1.1;margin:.45rem 0 .65rem}
+    .lead{color:var(--muted);font-size:1.05rem;max-width:52ch}
+    .quote{margin-top:1.3rem;padding-left:1rem;border-left:4px solid var(--accent)}
+    .quote p{font-size:1rem}.quote small{display:block;margin-top:.45rem;color:var(--muted);font-weight:700}
+    .list{display:grid;gap:1rem}.item{display:grid;grid-template-columns:40px 1fr;gap:.85rem}.dot{width:40px;height:40px;border-radius:50%;border:1px solid #b8c9db;position:relative;background:#fff}
+    .dot:after{content:"";position:absolute;inset:12px;border-radius:50%;background:#1f4f86}.item h3{font-size:1.05rem}.item p{color:var(--muted)}
+    .success{margin-top:.8rem;background:#edf8f2;border:1px solid #b7dec7;color:#12442d;border-radius:10px;padding:.75rem;display:none}
+    @media (max-width:900px){form,.split{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <div class="nav-wrap">
-    <nav class="container">
-      <a class="logo" href="https://whimble.ca">whimble</a>
-      <div class="nav-actions">
-        <a class="btn btn-ghost" href="tel:18555426082">1-855-542-6082</a>
-        <a class="btn btn-primary" href="#download">Get free guide</a>
-      </div>
-    </nav>
-  </div>
+  <div class="nav-wrap"><nav class="container"><a class="logo" href="https://www.whimble.ca/">whimble</a><a class="btn btn-primary" href="#download">Get the guide</a></nav></div>
+  <header class="hero"><div class="container"><h1>Ontario Passport funding, explained in a real-world way.</h1><p>This guide is for families and self-advocates who need practical clarity: what is eligible, what usually causes claim issues, and how to verify details before spending.</p><div class="chips"><span class="chip">Official sources linked</span><span class="chip">No credit card</span><span class="chip">Written by Whimble's Ontario care team</span></div>
+  <div class="form-wrap" id="download"><form id="leadForm"><div class="field"><label for="first">First name</label><input id="first" name="firstName" required /></div><div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" required /></div><button class="btn btn-primary" type="submit">Send PDF</button><p class="form-note">Whimble is not a Passport agency. This guide is plain-language support with links to official sources.</p></form><div class="success" id="successMessage" role="status" aria-live="polite"></div></div></div></header>
 
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">For Ontario families</span>
-        <h1>Understand Passport funding in one clear guide.</h1>
-        <p class="hero-sub">This free PDF explains who qualifies, what expenses are covered, and how to submit claims correctly — in plain language you can use right away.</p>
-        <ul class="bullet-list">
-          <li><span class="tick">✓</span><span>Simple explanation of eligibility, DSO intake, and wait times.</span></li>
-          <li><span class="tick">✓</span><span>Clear examples of what you can and cannot claim.</span></li>
-          <li><span class="tick">✓</span><span>Step-by-step claim workflow and March 31 deadline checklist.</span></li>
-        </ul>
-        <p class="note"><strong>Why this matters:</strong> many families lose unused funding each year because rules and timelines are confusing. This guide helps you avoid that.</p>
-      </div>
-
-      <aside class="card" id="download" aria-label="Download form">
-        <h2>Get the free 16-page guide</h2>
-        <p>No payment. No spam sequence. We email the PDF instantly.</p>
-        <form id="leadForm" onsubmit="handleSubmit(event)">
-          <div class="row">
-            <div>
-              <label for="first">First name</label>
-              <input id="first" type="text" name="firstname" autocomplete="given-name" required />
-            </div>
-            <div>
-              <label for="last">Last name</label>
-              <input id="last" type="text" name="lastname" autocomplete="family-name" required />
-            </div>
-          </div>
-          <div>
-            <label for="email">Email address</label>
-            <input id="email" type="email" name="email" autocomplete="email" inputmode="email" required />
-          </div>
-          <button class="btn btn-primary full" type="submit">Send me the guide</button>
-          <p class="privacy">We only use your email to send this guide.</p>
-        </form>
-      </aside>
-    </div>
-  </header>
-
-  <section class="section">
-    <div class="container">
-      <h2>How it works</h2>
-      <p class="section-sub">We designed this page to be quick to scan and quick to act on: one offer, one form, one clear next step.</p>
-      <div class="steps">
-        <article class="step"><span class="num">1</span><strong>Request the guide</strong><p>Fill in 3 fields so we can send the PDF to your inbox.</p></article>
-        <article class="step"><span class="num">2</span><strong>Read what applies to you</strong><p>Jump to the sections for eligibility, expenses, or claims.</p></article>
-        <article class="step"><span class="num">3</span><strong>Use funding confidently</strong><p>Follow the examples and checklist to avoid common claim mistakes.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background:var(--surface-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border)">
-    <div class="container grid-2">
-      <div>
-        <h2>What’s inside the guide</h2>
-        <p class="section-sub">Focused answers to the real questions families ask most often.</p>
-        <ul class="checks bullet-list">
-          <li><span class="tick">✓</span><span>Passport eligibility requirements and DSO process.</span></li>
-          <li><span class="tick">✓</span><span>Funding range and what affects your yearly amount.</span></li>
-          <li><span class="tick">✓</span><span>Allowed and not-allowed expenses with examples.</span></li>
-          <li><span class="tick">✓</span><span>MyDirectPlan claim steps and documentation checklist.</span></li>
-          <li><span class="tick">✓</span><span>Year-end timeline so funding is not left unused.</span></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2>Trust & sources</h2>
-        <p>Guide content is compiled from Ontario's Passport Program guidance and translated into plain language by Whimble's Ontario care team.</p>
-        <div class="faq">
-          <details>
-            <summary>Is this guide really free?</summary>
-            <p>Yes. You do not need a credit card and we do not charge for the PDF.</p>
-          </details>
-          <details>
-            <summary>Can I verify against official sources?</summary>
-            <p>Yes. We include links to Ontario’s official Passport resources in the guide.</p>
-          </details>
-          <details>
-            <summary>Is this only for Ottawa families?</summary>
-            <p>No. Passport is provincial, so the key rules apply across Ontario.</p>
-          </details>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container card" style="display:grid;gap:1rem;grid-template-columns:1fr auto;align-items:center;">
-      <div>
-        <h2 style="margin-bottom:.35rem;">Ready to get your copy?</h2>
-        <p class="section-sub">It takes under 20 seconds.</p>
-      </div>
-      <a class="btn btn-primary" href="#download">Download free guide</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container foot">
-      <a class="logo" style="font-size:1.1rem" href="https://whimble.ca">whimble</a>
-      <span>© 2026 Whimble Care Inc. · <a href="https://whimble.ca/privacy">Privacy</a> · <a href="https://whimble.ca/contact">Contact</a></span>
-    </div>
-  </footer>
+  <section class="section auth" id="whimble-fit"><div class="container split"><div><span class="eyebrow">The authentic Whimble link</span><h2>Passport is the funding system. Whimble is one way support can show up in real life.</h2><p class="lead">That distinction matters. We do not control Passport funding and we cannot guarantee reimbursement. What we can do is help families plan support clearly, keep records clean, and verify decisions against official guidance.</p><div class="quote"><p>"We believe clients belong in the driver's seat when it comes to their own care."</p><small>Whimble's public service positioning</small></div></div>
+  <div class="list"><article class="item"><span class="dot"></span><div><h3>Client-directed support</h3><p>Families can communicate routines and preferences, so support stays person-led.</p></div></article><article class="item"><span class="dot"></span><div><h3>Vetted attendants</h3><p>Whimble publishes screening expectations like checks, interviews, and safety standards.</p></div></article><article class="item"><span class="dot"></span><div><h3>Real use cases</h3><p>Support may include daily routines, personal care, errands, meals, and community participation, based on needs and current rules.</p></div></article><article class="item"><span class="dot"></span><div><h3>Boundaries are trust</h3><p>Whimble is not emergency medical care, not DSO, and not a Passport agency.</p></div></article></div></div></section>
 
   <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      const form = e.target;
-      const first = form.firstname.value.trim();
-      const email = form.email.value.trim();
-      form.innerHTML = `<div class="success"><strong>Thanks${first ? `, ${first}` : ""}.</strong> Your guide is on the way to <strong>${email}</strong>. Check spam/promotions if it doesn't appear within a few minutes.</div>`;
-      console.log("[Whimble] Lead captured", {
-        firstname: form.firstname?.value,
-        lastname: form.lastname?.value,
-        email,
-        source: "passport-guide-landing",
-        submittedAt: new Date().toISOString()
-      });
-    }
+    const form = document.querySelector('#leadForm');
+    const success = document.querySelector('#successMessage');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const firstName = String(new FormData(form).get('firstName') || '').trim();
+      const email = String(new FormData(form).get('email') || '').trim();
+      if (!form.reportValidity()) return;
+      form.style.display = 'none';
+      success.style.display = 'block';
+      success.textContent = `Thanks${firstName ? `, ${firstName}` : ''}. The guide is on its way to ${email}.`;
+    });
   </script>
 </body>
 </html>
+  <section class="section" style="background:#eef5f1; border-top:1px solid var(--border); border-bottom:1px solid var(--border)">
+    <div class="container grid-2">
+      <div>
+        <span class="eyebrow">About Whimble</span>
+        <h2>Care that feels personal, steady, and deeply human.</h2>
+        <p class="section-sub">Whimble supports families with compassionate, client-directed care built around daily life — not a one-size-fits-all script. We focus on dignity, consistency, and thoughtful matching so each person can feel seen, respected, and genuinely supported.</p>
+      </div>
+      <div class="card">
+        <h2>Why families choose Whimble</h2>
+        <ul class="checks bullet-list">
+          <li><span class="tick">✓</span><span>Warm, dependable attendants who respect routines, preferences, and goals.</span></li>
+          <li><span class="tick">✓</span><span>Flexible support for personal care, community participation, and everyday confidence.</span></li>
+          <li><span class="tick">✓</span><span>Clear communication with families, so care plans feel calm and coordinated.</span></li>
+          <li><span class="tick">✓</span><span>A values-first approach rooted in trust, safety, and long-term relationships.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+      <span>© 2025 Whimble Care Inc. · <a href="https://whimble.ca/privacy">Privacy</a> · <a href="https://whimble.ca/contact">Contact</a></span>
